@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using MusicStore.Models;
 
 namespace MusicStore
 {
@@ -33,6 +34,8 @@ namespace MusicStore
 
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(new MusicStore.Models.SampleData());
+
             AreaRegistration.RegisterAllAreas();
 
             // Use LocalDB for Entity Framework by default
